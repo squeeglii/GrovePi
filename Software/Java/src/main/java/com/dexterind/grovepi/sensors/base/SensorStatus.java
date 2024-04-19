@@ -43,7 +43,7 @@ public enum SensorStatus {
 
   private final String status;
 
-  private SensorStatus(String status){
+  SensorStatus(String status){
     this.status = status;
   }
 

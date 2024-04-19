@@ -1,9 +1,8 @@
 package com.dexterind.grovepi.sensors.base;
 
-import java.io.IOException;
+import com.dexterind.grovepi.utils.Debug;
 
-import com.dexterind.grovepi.*;
-import com.dexterind.grovepi.utils.*;
+import java.io.IOException;
 
 public class I2cSensor extends Sensor {
   protected int pin = 0;

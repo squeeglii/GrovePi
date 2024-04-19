@@ -1,8 +1,8 @@
 package com.dexterind.grovepi.utils;
 
-import java.io.IOException;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.logging.FileHandler;
@@ -65,9 +65,7 @@ public class Debug {
       // this one disables the console log
       SimpleFormatter formatter = new SimpleFormatter();
       fh.setFormatter(formatter);
-    } catch (SecurityException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
+    } catch (SecurityException | IOException e) {
       e.printStackTrace();
     }
   }

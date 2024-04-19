@@ -1,20 +1,17 @@
 package com.dexterind.grovepi;
 
+import com.dexterind.grovepi.utils.Commands;
+import com.dexterind.grovepi.utils.Debug;
+import com.dexterind.grovepi.utils.Statuses;
+import com.pi4j.io.i2c.I2CBus;
+import com.pi4j.io.i2c.I2CDevice;
+import com.pi4j.io.i2c.I2CFactory;
+import com.pi4j.system.SystemInfo;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.nio.ByteBuffer;
-import java.util.*;
-
-import com.dexterind.grovepi.*;
-import com.dexterind.grovepi.events.*;
-import com.dexterind.grovepi.utils.*;
-
-import com.pi4j.io.i2c.I2CBus;
-import com.pi4j.io.i2c.I2CDevice;
-import com.pi4j.io.i2c.I2CFactory;
-import com.pi4j.system.NetworkInfo;
-import com.pi4j.system.SystemInfo;
 
 public class Board {
 
@@ -52,9 +49,9 @@ public class Board {
   public int writeI2c(int... bytes) throws IOException {
     // Convert array: int[] to byte[]
     final ByteBuffer byteBuffer = ByteBuffer.allocate(bytes.length);
-    for (int i = 0, len = bytes.length; i < len; i++) {
-      byteBuffer.put((byte) bytes[i]);
-    }
+    for (int aByte : bytes)
+      byteBuffer.put((byte) aByte);
+
     sleep(100);
     device.write(0xfe, byteBuffer.array(), 0, byteBuffer.limit());
     return Statuses.OK;

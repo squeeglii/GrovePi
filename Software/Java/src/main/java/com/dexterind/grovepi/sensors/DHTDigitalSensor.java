@@ -1,14 +1,12 @@
 package com.dexterind.grovepi.sensors;
 
+import com.dexterind.grovepi.sensors.base.DigitalSensor;
+import com.dexterind.grovepi.utils.Commands;
+import com.dexterind.grovepi.utils.Debug;
+
 import java.io.IOException;
-import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.util.Arrays;
-
-import com.dexterind.grovepi.*;
-import com.dexterind.grovepi.sensors.base.*;
-import com.dexterind.grovepi.utils.*;
 
 public class DHTDigitalSensor extends DigitalSensor {
   private int moduleType = 0;

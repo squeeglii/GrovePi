@@ -32,9 +32,10 @@ package com.dexterind.grovepi.sensors;
  * THE SOFTWARE.
  */
 
-import java.io.IOException;
+import com.dexterind.grovepi.sensors.base.AnalogSensor;
+import com.dexterind.grovepi.sensors.base.SensorStatus;
 
-import com.dexterind.grovepi.sensors.base.*;
+import java.io.IOException;
 
 /**
  * Handles control of LED sensor for GrovePi.

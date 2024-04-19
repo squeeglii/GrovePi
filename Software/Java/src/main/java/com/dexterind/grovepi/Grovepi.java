@@ -1,13 +1,13 @@
 package com.dexterind.grovepi;
 
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
+import com.dexterind.grovepi.events.SensorEvent;
+import com.dexterind.grovepi.events.StatusEvent;
+import com.dexterind.grovepi.utils.Debug;
+import com.dexterind.grovepi.utils.Statuses;
 
-import com.dexterind.grovepi.*;
-import com.dexterind.grovepi.sensors.*;
-import com.dexterind.grovepi.events.*;
-import com.dexterind.grovepi.utils.*;
+import java.io.IOException;
+import java.util.EventObject;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public final class Grovepi {
   private static Grovepi instance;
@@ -26,9 +26,7 @@ public final class Grovepi {
 
     try {
       board = Board.getInstance();
-    } catch (IOException e) {
-      e.printStackTrace();
-    } catch (InterruptedException e) {
+    } catch (IOException | InterruptedException e) {
       e.printStackTrace();
     }
 
@@ -67,7 +65,7 @@ public final class Grovepi {
     }
   }
 
-  protected void fireEvent(EventObject event) {
+  private void fireEvent(EventObject event) {
     int i = 0;
     debug.log(Debug.INFO, "Firing event [" + listeners.toArray().length + " listeners]");
 

@@ -1,9 +1,11 @@
 package com.dexterind.grovepi;
 
-import com.dexterind.grovepi.events.*;
+import com.dexterind.grovepi.events.SensorEvent;
+import com.dexterind.grovepi.events.StatusEvent;
+
 import java.util.EventListener;
 
 public interface GrovepiListener extends EventListener {
-  public void onStatusEvent(StatusEvent event);
-  public void onSensorEvent(SensorEvent event);
+  void onStatusEvent(StatusEvent event);
+  void onSensorEvent(SensorEvent event);
 }

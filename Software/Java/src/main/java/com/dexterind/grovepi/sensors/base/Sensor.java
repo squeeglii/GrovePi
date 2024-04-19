@@ -3,10 +3,9 @@
  */
 package com.dexterind.grovepi.sensors.base;
 
-import java.io.IOException;
+import com.dexterind.grovepi.Board;
 
-import com.dexterind.grovepi.*;
-import com.dexterind.grovepi.utils.*;
+import java.io.IOException;
 
 public class Sensor {
   protected Board board;
